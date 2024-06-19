@@ -14,6 +14,10 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    author: {
+      name: "Gabriel Cozma",
+      link: "https://gabs.eu.org",
+    },
     nav: [
       { text: "Home", link: "/" },
       { text: "Website", link: "https://gabs.eu.org" },

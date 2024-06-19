@@ -47,10 +47,9 @@ h6 {
 }
 
 pre {
-  @apply bg-zinc-200;
+  @apply bg-zinc-100;
   @apply rounded-lg;
   padding: 1em;
-  margin: 1em 0;
   overflow-x: auto;
 
   @media (prefers-color-scheme: dark) {
@@ -63,6 +62,12 @@ pre {
     @media (prefers-color-scheme: dark) {
       color: var(--shiki-dark, inherit);
     }
+  }
+
+  code {
+    @apply font-mono;
+    @apply bg-transparent;
+    padding: 0;
   }
 }
 
@@ -158,4 +163,14 @@ hr {
   @media (prefers-color-scheme: dark) {
     @apply border-zinc-800;
   }
+}
+
+a:not(nav a),
+a:not(article a) {
+  @apply font-bold;
+  @apply transition-colors;
+  @apply underline;
+  @apply hover:text-zinc-600;
+  @apply dark:hover:text-zinc-400;
+  @apply hover:decoration-dotted;
 }

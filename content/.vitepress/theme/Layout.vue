@@ -9,41 +9,49 @@ const navigation = theme.value.nav || [];
 </script>
 
 <template>
-  <header>
-    <nav class="text-center max-w-[100px] mx-auto my-8">
-      <ul class="justify-between flex items-center list-none">
-        <li v-for="item in navigation">
+  <div class="layout flex flex-col min-h-dvh">
+    <main
+      class="mx-auto mt-[5%] mb-[2%] max-w-[65rem] w-[60vw] max-[600px]:w-[90vw] grow"
+    >
+      <div v-if="frontmatter.layout == 'home'">
+        <h1
+          class="text-center font-black text-4xl mb-5 text-black dark:text-white"
+        >
+          {{ site.title }}
+        </h1>
+        <p class="text-center">{{ site.description }}</p>
+        <ArticlesList />
+      </div>
+      <div v-else>
+        <h1
+          class="text-center font-black text-4xl mb-5 text-black dark:text-white"
+        >
+          {{ frontmatter.title }}
+        </h1>
+        <Content />
+        <footer class="text-center my-10 hover:scale-500">
+          <a
+            href="/"
+            class="p-2 dark:bg-zinc-800 bg-zinc-200 rounded-md transition-transform"
+            >⬅ Back to home</a
+          >
+        </footer>
+      </div>
+    </main>
+    <nav
+      class="flex items-center gap-3 sticky bottom-0 backdrop-blur-sm bg-opacity-50 bg-zinc-50 dark:bg-zinc-900 border-t border-t-zinc-200 dark:border-t-zinc-800 px-8 py-3 justify-between w-full z-10"
+    >
+      <ul class="flex items-center justify-end gap-3 list-none mr-8 m-0">
+        <li v-for="item in navigation" class="font-medium text-sm">
           <a :href="item.link">{{ item.text }}</a>
         </li>
       </ul>
+      <span class="text-sm opacity-70 font-medium"
+        >© {{ new Date().getFullYear() }}
+        <a :href="theme.author.link" class="underline">{{
+          theme.author.name
+        }}</a></span
+      >
     </nav>
-  </header>
-  <main
-    class="mx-auto mt-[5%] mb-[2%] max-w-[65rem] w-[60vw] max-[600px]:w-[90vw]"
-  >
-    <div v-if="frontmatter.layout == 'home'">
-      <h1
-        class="text-center font-black text-4xl mb-5 text-black dark:text-white"
-      >
-        {{ site.title }}
-      </h1>
-      <p class="text-center">{{ site.description }}</p>
-      <ArticlesList />
-    </div>
-    <div v-else>
-      <h1
-        class="text-center font-black text-4xl mb-5 text-black dark:text-white"
-      >
-        {{ frontmatter.title }}
-      </h1>
-      <Content />
-      <footer class="text-center my-10">
-        <a
-          href="/"
-          class="p-2 dark:bg-zinc-800 bg-zinc-200 rounded-md hover:scale-200 transform transition-transform"
-          >⬅ Back to home</a
-        >
-      </footer>
-    </div>
-  </main>
+  </div>
 </template>

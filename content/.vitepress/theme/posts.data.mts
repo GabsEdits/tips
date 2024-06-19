@@ -3,6 +3,7 @@ import { createContentLoader } from "vitepress";
 interface Post {
   title: string;
   description: string;
+  author: string;
   tags: string[];
 }
 
@@ -17,6 +18,7 @@ export default createContentLoader("posts/*.md", {
         title: frontmatter.title,
         description: frontmatter.description,
         tags: frontmatter.tags,
+        author: frontmatter.author,
         date: formatDate(frontmatter.date),
       }))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
