@@ -3,11 +3,11 @@ import { writeFileSync } from "fs";
 import { Feed } from "feed";
 import { createContentLoader, type SiteConfig } from "vitepress";
 
-const title = "Tipps";
-const description = "Share your tips to the world!";
+const title = "Gabriel Cozma's Tips";
+const description = "A collection of tips and tricks for developers.";
 const copyright = "Copyright (c) 2024-present, Gabriel Cozma";
 const image = "https://blog.gabs.eu.org/android-chrome-512x512.png";
-const baseUrl = `https://tipps.gxbs.me/`;
+const baseUrl = `https://tips.gxbs.me/`;
 
 export async function genFeed(config: SiteConfig) {
   const feed = new Feed({

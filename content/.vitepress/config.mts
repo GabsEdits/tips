@@ -20,6 +20,7 @@ export default defineConfig({
     },
     nav: [
       { text: "Home", link: "/" },
+      { text: "Feed", link: "/atom.xml" },
       { text: "Website", link: "https://gabs.eu.org" },
     ],
   },

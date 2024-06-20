@@ -9,7 +9,7 @@ const navigation = theme.value.nav || [];
 </script>
 
 <template>
-  <div class="layout flex flex-col min-h-dvh">
+  <div class="flex flex-col min-h-dvh">
     <main
       class="mx-auto mt-[5%] mb-[2%] max-w-[65rem] w-[60vw] max-[600px]:w-[90vw] grow"
     >
