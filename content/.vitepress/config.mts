@@ -1,4 +1,3 @@
-import { link } from "fs";
 import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config

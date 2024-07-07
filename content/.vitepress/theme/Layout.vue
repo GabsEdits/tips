@@ -14,18 +14,30 @@ const navigation = theme.value.nav || [];
       class="mx-auto mt-[5%] mb-[2%] max-w-[65rem] w-[60vw] max-[600px]:w-[90vw] grow"
     >
       <div v-if="frontmatter.layout == 'home'">
-        <h1
-          class="text-center font-black text-4xl mb-5 text-black dark:text-white"
-        >
+        <h1 class="text-center font-black text-4xl mb-5">
           {{ site.title }}
         </h1>
         <p class="text-center">{{ site.description }}</p>
         <ArticlesList />
       </div>
       <div v-else>
-        <h1
-          class="text-center font-black text-4xl mb-5 text-black dark:text-white"
-        >
+        <small class="text-center block">
+          <time>
+            {{
+              new Date(frontmatter.date).toLocaleDateString(
+                theme.locale || "en-US",
+                {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                },
+              )
+            }}</time
+          >, {{ frontmatter.author }}
+        </small>
+        <h1 class="text-center font-black text-4xl mb-8">
           {{ frontmatter.title }}
         </h1>
         <Content />
@@ -33,20 +45,20 @@ const navigation = theme.value.nav || [];
           <a
             href="/"
             class="p-2 dark:bg-zinc-800 bg-zinc-200 rounded-md transition-transform"
-            >⬅ Back to home</a
+            >⬅ Back home</a
           >
         </footer>
       </div>
     </main>
     <nav
-      class="flex items-center gap-3 sticky bottom-0 backdrop-blur-sm bg-opacity-50 bg-zinc-50 dark:bg-zinc-900 border-t border-t-zinc-200 dark:border-t-zinc-800 px-8 py-3 justify-between w-full z-10"
+      class="flex items-center gap-3 sticky bottom-0 backdrop-blur-sm bg-opacity-50 bg-zinc-50 dark:bg-zinc-900 border-t border-t-zinc-200 dark:border-t-zinc-700 px-8 py-3 justify-between w-full z-10"
     >
       <ul class="flex items-center justify-end gap-3 list-none mr-8 m-0">
         <li v-for="item in navigation" class="font-medium text-sm">
           <a :href="item.link">{{ item.text }}</a>
         </li>
       </ul>
-      <span class="text-sm opacity-70 font-medium"
+      <span class="text-sm opacity-80 font-medium"
         >© {{ new Date().getFullYear() }}
         <a :href="theme.author.link" class="underline">{{
           theme.author.name
