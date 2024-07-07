@@ -26,7 +26,7 @@ yarn add @mdit/plugin-footnote
 2. Import it in your `.vitepress/config.mts` file:
 
 ```ts
-import { footnote } from '@mdit/plugin-footnote'
+import { footnote } from "@mdit/plugin-footnote";
 ```
 
 3. Add the plugin to the `markdown` option in your `.vitepress/config.mts` file:
