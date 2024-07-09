@@ -1,5 +1,5 @@
 ---
-title: Add Markdown-it Plugin in VitePress
+title: Add Markdown-it Plugins in VitePress
 date: 2024-07-07
 description: How to add a Markdown-it plugin to your VitePress site to extend the functionality of the Markdown parser.
 tags:
