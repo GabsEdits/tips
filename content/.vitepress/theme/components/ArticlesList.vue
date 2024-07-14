@@ -25,7 +25,7 @@
         @click="filterPosts(tag)"
         class="px-2 py-1 bg-zinc-100 border-2 transition-colors hover:bg-zinc-200 border-zinc-200 dark:border-zinc-700 mx-1 rounded-3xl dark:bg-zinc-900 dark:hover:bg-zinc-800 mb-1"
       >
-        <span class="opacity-60 font-bold">#</span>{{ tag }}
+        {{ tag }}
       </button>
     </div>
     <div class="post-container">
@@ -61,7 +61,7 @@
               v-for="tag in post.tags"
               :key="tag"
               class="px-2 py-1 bg-zinc-200 border-2 transition-colors hover:bg-zinc-400 border-zinc-300 dark:border-zinc-600 mx-1 rounded-3xl dark:bg-zinc-800 dark:hover:bg-zinc-700 mb-1"
-              ><span class="opacity-60 font-medium">#</span>{{ tag }}</span
+              >{{ tag }}</span
             >
           </div>
         </div>

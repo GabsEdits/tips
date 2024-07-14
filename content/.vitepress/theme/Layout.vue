@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useData, Content } from "vitepress";
 import ArticlesList from "./components/ArticlesList.vue";
+import Article from "./components/Article.vue";
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { site, frontmatter, theme } = useData();
@@ -21,33 +22,7 @@ const navigation = theme.value.nav || [];
         <ArticlesList />
       </div>
       <div v-else>
-        <small class="text-center block">
-          <time>
-            {{
-              new Date(frontmatter.date).toLocaleDateString(
-                theme.locale || "en-US",
-                {
-                  day: "2-digit",
-                  month: "long",
-                  year: "numeric",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                },
-              )
-            }}</time
-          >, {{ frontmatter.author }}
-        </small>
-        <h1 class="text-center font-black text-4xl mb-8">
-          {{ frontmatter.title }}
-        </h1>
-        <Content />
-        <footer class="text-center my-10 hover:scale-500">
-          <a
-            href="/"
-            class="p-2 dark:bg-zinc-800 bg-zinc-200 rounded-md transition-transform"
-            >⬅ Back home</a
-          >
-        </footer>
+        <Article />
       </div>
     </main>
     <nav
