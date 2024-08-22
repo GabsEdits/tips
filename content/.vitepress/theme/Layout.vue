@@ -21,8 +21,18 @@ const navigation = theme.value.nav || [];
         <p class="text-center">{{ site.description }}</p>
         <ArticlesList />
       </div>
-      <div v-else>
+      <div v-if="frontmatter.layout == 'post'">
         <Article />
+      </div>
+      <div v-else-if="!frontmatter.layout">
+        <Content />
+        <footer class="text-center my-10 hover:scale-500">
+          <a
+            href="/"
+            class="p-2 dark:bg-zinc-800 bg-zinc-200 rounded-md transition-transform"
+            >⬅ Back home</a
+          >
+        </footer>
       </div>
     </main>
     <nav

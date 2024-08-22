@@ -144,19 +144,21 @@ table {
   @apply border-collapse;
   @apply rounded-lg;
 
-  @apply border-t;
-  @apply border-zinc-200;
+  @apply overflow-hidden;
 
   @media (prefers-color-scheme: dark) {
     @apply border-zinc-800;
   }
 
+  thead {
+    @apply rounded-t-lg;
+  }
+
   th {
     @apply bg-zinc-200;
-    @apply border-b;
-    @apply border-zinc-200;
     @apply p-2;
     @apply text-zinc-900;
+    @apply first:rounded-tl-lg last:rounded-tr-lg;
 
     @media (prefers-color-scheme: dark) {
       @apply bg-zinc-800;
@@ -166,7 +168,7 @@ table {
   }
 
   td {
-    @apply border-b;
+    @apply border-t;
     @apply border-zinc-200;
     @apply p-2;
 
