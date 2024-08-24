@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Replicate the Marquee Tag with CSS
 date: 2024-06-08
 description: The marquee tag was a popular feature in older versions of HTML that allowed text to scroll horizontally across the screen. While the marquee tag is no longer supported in modern browsers, you can replicate its functionality using CSS animations. Learn how to create a marquee effect with CSS in this tip.

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Remove .DS_Store Files Quickly
 date: 2024-06-19
 description: Annoyed by .DS_Store files cluttering up your directories? Learn how to remove them quickly using the terminal on macOS.
