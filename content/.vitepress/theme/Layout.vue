@@ -4,7 +4,7 @@ import ArticlesList from "./components/ArticlesList.vue";
 import Article from "./components/Article.vue";
 
 // https://vitepress.dev/reference/runtime-api#usedata
-const { site, frontmatter, theme } = useData();
+const { site, frontmatter, theme, page } = useData();
 
 const navigation = theme.value.nav || [];
 </script>
@@ -23,6 +23,24 @@ const navigation = theme.value.nav || [];
       </div>
       <div v-if="frontmatter.layout == 'post'">
         <Article />
+      </div>
+      <div v-if="page.isNotFound">
+        <div class="flex flex-col items-center justify-center">
+          <h1 class="text-center font-black text-6xl animate-pulse mb-0">404</h1>
+          <p class="text-center font-bold">Page not found</p>
+          <p class="text-center">The page you are looking for does not exist.</p>
+          <img
+            src="https://http.cat/404"
+            alt="404"
+            class="w-1/2 h-auto mt-5"
+        </div>
+        <footer class="text-center my-10 hover:scale-500">
+          <a
+            href="/"
+            class="p-2 dark:bg-zinc-800 bg-zinc-200 rounded-md transition-transform no-underline"
+            >⬅ Back home</a
+          >
+        </footer>
       </div>
       <div v-else-if="!frontmatter.layout">
         <Content />
