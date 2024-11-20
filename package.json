@@ -3,7 +3,7 @@
     "@csstools/normalize.css": "^12.1.1",
     "prettier": "^3.3.3",
     "sass": "^1.79.5",
-    "prettier-plugin-tailwindcss": "^0.6.8",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "vitepress": "^1.4.1"
   },
   "scripts": {
