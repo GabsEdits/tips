@@ -30,9 +30,10 @@ const navigation = theme.value.nav || [];
           <p class="text-center font-bold">Page not found</p>
           <p class="text-center">The page you are looking for does not exist.</p>
           <img
-            src="https://http.cat/404"
+            src="https://http.cat/images/404.jpg"
             alt="404"
             class="w-1/2 h-auto mt-5"
+            />
         </div>
         <footer class="text-center my-10 hover:scale-500">
           <a
